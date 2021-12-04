@@ -1,0 +1,130 @@
+
+/*CSS STYLE_SIDENAV*/
+
+.example-container {
+    width: 100%;
+    height: 90vh;
+    border: 1px solid rgba(206, 206, 206, 0.5);
+  }
+  
+  .example-sidenav-content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  } 
+  
+  .example-sidenav {
+    min-width: 18%;
+    padding: 5px 5px 5px 0px;
+  }
+
+  .example-sidenav mat-list-item{
+    margin: 5px 0px;
+    color: rgb(122, 122, 122);
+    font-size: 14px;
+    
+  }
+
+  .example-sidenav mat-list-item:hover{
+      background-color: rgb(241, 241, 241);
+      border-top-right-radius: 50px ;
+      border-bottom-right-radius: 50px;
+   
+  }
+
+  .link-active{
+    background-color: rgb(224, 236, 255);
+    border-top-right-radius: 50px ;
+    border-bottom-right-radius: 50px;
+    color: rgb(0, 152, 240) !important;
+  }
+
+  .profile{
+    width: 64px;
+    height: 64px;  
+    border-radius: 50px ;
+    border-radius: 50px;
+    margin: 15px;
+  }
+
+  .box-profile{
+    max-width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 10px 0px;
+  }
+
+  #profile-user{
+    color: rgb(0, 152, 240) !important;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: none;
+  }
+
+
+  #profile-deitails{
+    color: rgb(133, 133, 133);
+    font-size: 10px;
+  }
+
+
+  .material-icons{
+    margin: 0px 20px 0px 5px;
+  }
+
+  
+  
+  
+  /* CSS_STYLE TOOBAR*/
+  
+  #sideMenu{
+    color: rgb(0, 152, 240) !important;
+    
+  }
+
+  .side-nav-button{
+    margin: 0px 15px 0px 5px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .box-avata{
+    box-sizing: border-box;
+    width: 300px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .avata-profile a {
+    padding: 0%;
+  }
+
+  .avata-profile img{
+    width: 42px;
+    height: 42px;
+    position: relative;
+    border-radius: 50%;
+    margin: 5px;
+  }
+
+  .add-profile{
+    color: rgb(0, 152, 240) !important;
+    margin-left: 40px;
+    
+  }
+
+  .add-profile .material-icons{
+    font-size: 25px;
+  }
+
+
+
+ 

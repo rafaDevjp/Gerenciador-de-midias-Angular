@@ -1,0 +1,96 @@
+
+
+
+
+<mat-toolbar>
+    <button class="side-nav-button" mat-icon-button aria-label="Menu" (click)="drawer.toggle()">
+       
+        <span id="sideMenu" class="material-icons">
+            table_rows
+        </span>
+    </button>
+    <span class="logo-style">PostGo<strong style="color: rgb(0, 152, 240) !important;">.</strong>io</span>
+
+    <button class="add-profile" mat-icon-button aria-label="add_User">
+        <span class="material-icons">
+            add_reaction
+        </span>
+    </button>
+
+    <div class="box-avata">
+        <div class="">
+           
+            <a class="avata-profile" *ngFor="let channel of channels" (click)="selectChannel(channel)">
+                <img src="{{ channel.user.profile_pic_url }}"  />
+            </a>
+        </div>
+    </div>
+    
+   
+    <span class="example-spacer"></span>
+    
+  
+    
+    
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="box-profile">
+            <img src="{{ selectedChannel?.user.profile_pic_url }}" class="profile">
+            
+            <div>
+                <div >
+                    <span id="profile-user">{{ selectedChannel?.user.username }}</span>
+                </div>
+                <div >
+                    <div >
+                        <span id="profile-deitails">
+                            {{ selectedChannel?.user.follower_count }} Followers |
+                            {{ selectedChannel?.user.following_count }} Following
+                        </span>
+                    </div>
+                    <div *ngIf="selectedChannel?.user.is_business">
+                        Business Profile
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <mat-list>
+            <mat-list-item routerLink="home/{{this.idChannel}}" routerLinkActive="link-active" > 
+                <span class="material-icons">
+                    home
+                </span>
+                    Visão Geral
+            </mat-list-item>
+           
+            <mat-list-item routerLink="new-post/{{this.idChannel}}" routerLinkActive="link-active" > 
+                <span class="material-icons">
+                    post_add
+                </span>
+                Novo Post
+            </mat-list-item>
+            <mat-list-item routerLink="atividade/{{this.idChannel}}" routerLinkActive="link-active">
+                <span class="material-icons">
+                    edit_calendar
+                </span>
+                Atividades
+            </mat-list-item>
+          </mat-list>
+    </mat-drawer>
+    <!-- Pages -->
+    <div class="example-sidenav-content">
+     
+      <router-outlet></router-outlet>
+
+    </div>
+  
+  </mat-drawer-container>
