@@ -1,90 +1,79 @@
-<span class="logo-style-mini" >
-   <span> PostGo<strong style="color: rgb(0, 152, 240) !important;">.</strong>io</span>
+<span class="logo-style-mini">
+	<span> PostGo<strong style="color: rgb(0, 152, 240) !important;">.</strong>io</span>
 </span>
 
 
-		<!-- Container Main -->
-		<section class="container">
-			<div class="box-content" style="background-color: rgb(238, 238, 238);">
+<!-- Container Main -->
+<section class="container">
+	<div class="box-content" style="background-color: rgb(238, 238, 238);">
 
-				<ngx-file-drop
-					dropZoneLabel="Drop files here"
-					(onFileDrop)="dropped($event)"
-					(onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-					<ng-template class="drop-zone" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+		<ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)"
+			(onFileLeave)="fileLeave($event)">
+			<ng-template class="drop-zone" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
 
-							<button mat-fab color="customs" id="buttom-img" type="button" (click)="openFileSelector()">
-								<mat-icon>add_photo_alternate</mat-icon>
-							</button>
-					</ng-template>
-				</ngx-file-drop>
+				<button mat-fab color="customs" id="buttom-img" type="button" (click)="openFileSelector()">
+					<mat-icon>add_photo_alternate</mat-icon>
+				</button>
+			</ng-template>
+		</ngx-file-drop>
 
 
 
-					<ul class="upload-name-style">
-						<li *ngFor="let item of files; let i = index">
-							<span>
-								<strong>{{ item.relativePath }}</strong>
-							</span>
-						</li>
-					</ul>
+		<ul class="upload-name-style">
+			<li *ngFor="let item of files; let i = index">
+				<span>
+					<strong>{{ item.relativePath }}</strong>
+				</span>
+			</li>
+		</ul>
 
-			</div>
+	</div>
 
-			<div class="box-content">
-				<div>
-					<h1 class="box-title ">Criar {{this.data.type}}</h1>
-				</div>
-				<mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
-					<mat-chip >
-						<img src="{{this.data.avata}}">
-						 {{this.data.user}}
-					</mat-chip>
-				  </mat-chip-list>
-				<div class="">
-					<form [formGroup]="formSchedule" ngNativeValidate>
+	<div class="box-content">
+		<div>
+			<h1 class="box-title ">Criar {{this.data.type}}</h1>
+		</div>
+		<mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+			<mat-chip>
+				<img src="{{this.data.avata}}">
+				{{this.data.user}}
+			</mat-chip>
+		</mat-chip-list>
+		<div class="">
+			<form [formGroup]="formSchedule" ngNativeValidate>
+				<p>
+					<mat-slide-toggle formControlName="now"> Postar Agora</mat-slide-toggle>
+				</p>
+				<p class="input-style">
+					<mat-form-field appearance="outline">
+						<mat-label>Hora da Postagem</mat-label>
+						<input formControlName="time" matInput placeholder="Hora da Postagem" type="time">
+						<!-- <mat-icon matSuffix>av_timer</mat-icon> -->
+					</mat-form-field>
 
+					<mat-form-field mat-form-field appearance="outline">
+						<mat-label>Data do Agendamento</mat-label>
+						<input matInput [matDatepicker]="picker2" formControlName="date">
+						<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+						<mat-datepicker #picker2></mat-datepicker>
+					</mat-form-field>
+				</p>
 
-						<p>
-							<mat-slide-toggle  formControlName="now"  > Postar Agora</mat-slide-toggle>
-						</p>
+				<mat-form-field appearance="outline">
+					<mat-label>Escreva Algo...</mat-label>
+					<textarea formControlName="caption" name="caption" matInput rows="5"></textarea>
+				</mat-form-field>
+			</form>
 
-						<p class="input-style">
-							<mat-form-field appearance="outline">
-							  <mat-label>Hora da Postagem</mat-label>
-							  <input  formControlName="time" matInput placeholder="Hora da Postagem" type="time">
-							  <!-- <mat-icon matSuffix>av_timer</mat-icon> -->
-							</mat-form-field>
+			<button mat-flat-button color="customs" type="submit" [disabled]="!formSchedule.valid" (click)="schedule()"
+				value="Agendar">
+				<mat-icon>send</mat-icon>
+			</button>
+			<button mat-button (click)="onNoClick()">Cancel</button>
+		</div>
 
-							<mat-form-field	mat-form-field appearance="outline">
-								<mat-label>Data do Agendamento</mat-label>
-								<input matInput  [matDatepicker]="picker2" formControlName="date">
-								<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-								<mat-datepicker #picker2></mat-datepicker>
-							</mat-form-field>
-						</p>
+		<div mat-dialog-actions>
 
-
-
-
-						<mat-form-field  appearance="outline">
-							<mat-label>Escreva Algo...</mat-label>
-							<textarea  formControlName="caption" name="caption" matInput rows="5"></textarea>
-						</mat-form-field>
-					</form>
-
-					<button mat-flat-button color="customs"  type="submit" [disabled]="!formSchedule.valid" (click)="schedule()" value="Agendar">
-						<mat-icon>send</mat-icon>
-					</button>
-					<button mat-button (click)="onNoClick()">Cancel</button>
-				</div>
-
-				<div mat-dialog-actions>
-
-				</div>
-			</div>
-		</section>
-
-
-
-
+		</div>
+	</div>
+</section>

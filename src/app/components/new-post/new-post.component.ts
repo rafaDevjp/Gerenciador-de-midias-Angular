@@ -38,10 +38,10 @@ export class NewPostComponent implements OnInit {
 
 		})
 
-   
+
     }
 
-	//Open dialog Feed
+	// Open dialog Feed
 	openFeedDialog(): void {
 		const dialogRef = this.dialog.open(FeedDialogComponent, {
 			width: '950px',
@@ -59,7 +59,7 @@ export class NewPostComponent implements OnInit {
 		});
 	}
 
-	//Open dialog Story
+	// Open dialog Story
 	openStoryDialog(): void {
 		const dialogRef = this.dialog.open(FeedDialogComponent, {
 			width: '950px',
@@ -77,7 +77,7 @@ export class NewPostComponent implements OnInit {
 		});
 	}
 
-	//Open dialog Carrossel
+	// Open dialog Carrossel
 	openMensageDialog(): void {
 		const dialogRef = this.dialog.open(FeedDialogComponent, {
 			width: '950px',

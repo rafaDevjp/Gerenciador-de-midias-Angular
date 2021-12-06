@@ -14,7 +14,7 @@ export class MasterComponent implements OnInit {
 	channels: any = [];
 	selectedChannel = null;
 	idChannel:any
-	
+
 
 	constructor(
 		private channelService: ChannelsService,
@@ -34,7 +34,7 @@ export class MasterComponent implements OnInit {
 		});
 	}
 
-	//Seleciona conta
+	// Seleciona conta
 	selectChannel(channel: any) {
 		this.selectedChannel = channel;
 
@@ -49,7 +49,7 @@ export class MasterComponent implements OnInit {
 		this.routerHome(id)
 	}
 
-	//Adiciona o parametro na rota Home
+	// Adiciona o parametro na rota Home
 	routerHome(id:any ){
 		this.router.navigate(['home/'+ id ])
 	}

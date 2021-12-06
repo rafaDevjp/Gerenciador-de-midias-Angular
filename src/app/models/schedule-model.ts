@@ -7,11 +7,12 @@ export interface ScheduleModel {
     start_date: string;
     end_date: string;
     data: Array<DataModel>;
-  
+
 }
 
 export interface DataModel{
     id: number;
+    user_id: any;
     created_at: any;
     status: string;
     now: boolean;
