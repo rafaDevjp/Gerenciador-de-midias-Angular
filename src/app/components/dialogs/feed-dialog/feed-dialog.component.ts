@@ -7,6 +7,7 @@ import { ChannelsService } from 'src/app/services/channels.service';
 import { ChannelModel } from 'src/app/models/channel-model';
 
 
+
 @Component({
   selector: 'app-feed-dialog',
   templateUrl: './feed-dialog.component.html',
@@ -18,6 +19,7 @@ export class FeedDialogComponent implements OnInit {
     channels: ChannelModel;
     registro = new Date()
     isChecked = false;
+   
 
 
 
@@ -38,7 +40,7 @@ export class FeedDialogComponent implements OnInit {
             image:['',Validators.required],
             date: this.registro = new Date(),
             type: ['', Validators.required],
-            caption:[''],
+            caption:[{value: '', disabled: this.data.disabled}, Validators.required],
             now: [this.isChecked],
             status:[''],
             time:[this.timePost],
