@@ -16,9 +16,15 @@ import { ChannelModel } from 'src/app/models/channel-model';
 export class FeedDialogComponent implements OnInit {
     files: NgxFileDropEntry[] = [];
     channels: ChannelModel;
-    registro = new Date()  
-    isChecked = false; 
-    
+    registro = new Date()
+    isChecked = false;
+
+
+
+    timePost = `${this.registro.getHours()}:${this.registro.getMinutes() + 1}`;
+
+
+
     constructor(
         public dialogRef: MatDialogRef<FeedDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any,
@@ -35,13 +41,13 @@ export class FeedDialogComponent implements OnInit {
             caption:[''],
             now: [this.isChecked],
             status:[''],
-            time:[''],
+            time:[this.timePost],
             user_id:[this.data.id]
         });
 
     //Inity Functions
     ngOnInit() {
-        
+
         this.channelService.getIdChannel( this.data.id).subscribe(res =>{
             this.formSchedule.patchValue({ channel: res});
         })
@@ -49,7 +55,7 @@ export class FeedDialogComponent implements OnInit {
     }
 
     postNow(){
-        
+
     }
 
     //close dialog
@@ -64,10 +70,10 @@ export class FeedDialogComponent implements OnInit {
         this.schedoleService.createSchedules(this.formSchedule.value).subscribe(() =>{
                 this.formSchedule.reset();
                 this.onNoClick()
-                
-               
+
+
         })
-        
+
     }
 
     // Fonção do Drag Drop
@@ -85,7 +91,7 @@ export class FeedDialogComponent implements OnInit {
             }
         }
     }
-    
+
     //Enventos Drag Dropped
     fileOver(event) {
         console.log(event);
@@ -95,5 +101,6 @@ export class FeedDialogComponent implements OnInit {
         console.log(event);
     }
 
-    
+
 }
+

@@ -15,6 +15,8 @@ import { FeedDialogComponent } from '../dialogs/feed-dialog/feed-dialog.componen
 })
 
 
+
+
 export class NewPostComponent implements OnInit {
 	id_params: any;
 	channel: ChannelModel;
@@ -25,15 +27,19 @@ export class NewPostComponent implements OnInit {
 		private cheannelService: ChannelsService
 	) { }
 
+
+
 	ngOnInit(): void {
-		this.id_params = this.activated.snapshot.paramMap.get('data')// GEt type ID params 
+		this.id_params = this.activated.snapshot.paramMap.get('data')// GEt type ID params
 		// console.log(this.id_params);
 		this.cheannelService.getIdChannel(this.id_params).subscribe(res => {
 			this.channel = res
 			// console.log("Valor De new-post: ", this.channel);
-			
+
 		})
-	}
+
+   
+    }
 
 	//Open dialog Feed
 	openFeedDialog(): void {
