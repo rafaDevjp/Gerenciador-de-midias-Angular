@@ -1,4 +1,8 @@
 # Gerenciador de Conteúdo para instagram 
 
+#### Este projeto foi desenvolvido para fins de teste, baseado nas tecnologias Angular 11, TypeScrpt, JavaScript, Css, HTML e Angular Material, implementa uma interface dinâmica onde é possível um usuário do tipo ADM, administrar várias contas/perfis do Instagram de forma simultânea. Existem três tipos de ações que o administrador pode executar, a primeira seria criar um Feed, a segunda, criar um carrossel e a terceira, criar um Story. Existe também algumas ações secundárias, que possibilitam, por exemplo, criar um agendamento para aquela determinada ação primária, para isso, podemos adicionar a data da postagem e a hora em que será disparada na conta selecionada. Falando em conta selecionada, temos uma outra ação que praticamente acontece de forma automática, que seria selecionar uma conta específica, no exemplo é possível ver alguns perfis no header da pagina, ao clicar no avatar, você seleciona ele como a conta ser gerenciada a partir deste momento, por padrão a primeira conta a ser adicionada fica como a conta selecionada quando a sessão é iniciada, você também pode ver qual conta está selecionada olhando no SideNav, qual perfil está selecionado, a partir de agora você poderá postar Feeds, slides ou storyes com esse perfil, outra possibilidade é a de acessar a aba Atividades e ver uma lista/tabela com todas as atividades que aquele perfil já executou.
+
+#### Por mais é isso, o projeto esta em estado de implementação e em breve sofrerá grandes alterações como a tela de login com autenticação e validação dos usuários que o administrarão, como também a possibilidade de adicionar, via cadastro, um novo perfil do Imstagram. 
+
 
 
