@@ -17,8 +17,7 @@ export class FeedDialogComponent implements OnInit {
 	channels: ChannelModel;
 	registro = new Date()
 	isChecked = false;
-
-
+  event = false
 	timePost = `${this.registro.getHours()}:${this.registro.getMinutes() + 1}`;
 
 	constructor(
@@ -29,17 +28,22 @@ export class FeedDialogComponent implements OnInit {
 		private channelService: ChannelsService
 	) { }
 
+
+
+
+
 	formSchedule = this.fb.group({
 		channel: ['', Validators.required],
 		image: ['', Validators.required],
 		date: this.registro = new Date(),
 		type: ['', Validators.required],
-		caption: [{ value: '', disabled: this.data.disabled }, Validators.required],
+		caption: [{ value: '', disabled: this.data.disabled }],
 		now: [this.isChecked],
 		status: [''],
-		time: [this.timePost],
-		user_id: [this.data.id]
+		time: [{value:this.timePost, disabled:this.event}],
+		user_id: [{value:this.data.id, disabled:this.event}]
 	});
+
 
 	// Inity Functions
 	ngOnInit() {

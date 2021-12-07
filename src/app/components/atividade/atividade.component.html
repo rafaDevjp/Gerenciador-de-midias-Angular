@@ -1,5 +1,5 @@
 <mat-card>
-	<h1>Historicos de Atividades de {{userNameProfile}}</h1>
+	<h1>Histórico de Atividades de {{userNameProfile}}</h1>
 </mat-card>
 <mat-card class="table-content">
 
@@ -47,8 +47,11 @@
 
 			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-		</table>
 
+		</table>
+    <div class="feed" *ngIf="registIsNotFound">
+      <h2>Não Existe Regitro de Atividades Para Este Perfil</h2>
+    </div>
 		<mat-paginator [pageSizeOptions]="[5,10,15,20]" showFirstLastButtons></mat-paginator>
 	</div>
 

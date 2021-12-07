@@ -138,6 +138,40 @@ export const schedules = {
     },
 
     {
+      id: 646247247,
+      user_id:427567,
+      created_at: '2021-03-16T19:27:45.000000Z',
+      status: 'Send',
+      time:'19:27',
+      now: false,
+      date: '2021-03-16T21:27:00+0000',
+      caption: null,
+      ig_code: 'CMfqNlDHyTc',
+      is_history: true,
+      is_album: false,
+      is_igtv: false,
+      is_reels: false,
+      ig_image_url:
+        'https://instagram.fthe1-1.fna.fbcdn.net/v/t51.2885-15/e35/161738459_275447074090924_2665021838551782560_n.jpg?se=7&tp=1&_nc_ht=instagram.fthe1-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=8DN_-fA9oMIAX-LzyR6&oh=b1d468605f8fa3105a4dc23fde5f778c&oe=6053B236&ig_cache_key=MjUzMDkyNzE2NjY5Mjk5MjIyMA%3D%3D.2',
+      type: 'Story',
+      media_type: 'photo',
+      image: {
+        id: 125306124,
+        filename: '077aacb040a7506e3216676f0743993312c0ec7c.jpg',
+        is_album: null,
+        url:
+          'https://jaguarparade.com/bh2020/wp-content/uploads/2019/08/Post_Blog-1.jpg',
+        type: null,
+      },
+      channel: {
+        id: 427567,
+        username: 'Gandalfsertanejo',
+        profile_pic:
+          'https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-19/s150x150/82155853_495819618006168_2122337653864005632_n.jpg?tp=1&_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_ohc=a825I9qCm68AX_rao5-&ccb=7-4&oh=7fc2bb2204e3d74e41dad4bb7afb4a76&oe=608C68B9&_nc_sid=a9513d',
+      },
+      socials: [],
+    },
+    {
       id: 62065304,
       user_id:533269,
       created_at: '2021-03-16T19:27:45.000000Z',
@@ -784,7 +818,7 @@ export const channels = [
     },
     status: 'ok',
   },
-  
+
   {
     id: 396587,
     user: {
