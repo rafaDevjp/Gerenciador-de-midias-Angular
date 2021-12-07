@@ -17,8 +17,12 @@ export class FeedDialogComponent implements OnInit {
 	channels: ChannelModel;
 	registro = new Date()
 	isChecked = false;
-  event = false
-	timePost = `${this.registro.getHours()}:${this.registro.getMinutes() + 1}`;
+  hora = this.registro.getHours() < 9 ? '0' + this.registro.getHours() : this.registro.getHours();
+  minutos = this.registro.getMinutes() < 9 ? '0' + this.registro.getMinutes() : this.registro.getMinutes() ;
+  segundos =this.registro.getSeconds() < 9 ? '0' + this.registro.getSeconds() : this.registro.getSeconds();
+	timePost = `${this.hora}:${this.minutos}:${this.segundos}`;
+
+
 
 	constructor(
 		public dialogRef: MatDialogRef<FeedDialogComponent>,
@@ -40,14 +44,14 @@ export class FeedDialogComponent implements OnInit {
 		caption: [{ value: '', disabled: this.data.disabled }],
 		now: [this.isChecked],
 		status: [''],
-		time: [{value:this.timePost, disabled:this.event}],
-		user_id: [{value:this.data.id, disabled:this.event}]
+		time: [this.timePost],
+		user_id: [this.data.id]
 	});
 
 
 	// Inity Functions
 	ngOnInit() {
-
+    console.log( `${this.hora}:${this.minutos}:${this.minutos}`);
 		this.channelService.getIdChannel(this.data.id).subscribe(res => {
 			this.formSchedule.patchValue({ channel: res, time: this.timePost });
 		})

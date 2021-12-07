@@ -83,7 +83,7 @@ export class NewPostComponent implements OnInit {
 			width: '950px',
 			height: '600px',
 			data: {
-				type: "Carrosel",
+				type: "Carrossel",
 				id: this.id_params,
 				user: this.channel.user.username,
 				avata: this.channel.user.profile_pic_url,
