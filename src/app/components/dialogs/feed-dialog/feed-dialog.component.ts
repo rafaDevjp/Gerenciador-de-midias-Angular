@@ -17,9 +17,9 @@ export class FeedDialogComponent implements OnInit {
 	channels: ChannelModel;
 	registro = new Date()
 	isChecked = false;
-  hora = this.registro.getHours() < 9 ? '0' + this.registro.getHours() : this.registro.getHours();
-  minutos = this.registro.getMinutes() < 9 ? '0' + this.registro.getMinutes() : this.registro.getMinutes() ;
-  segundos =this.registro.getSeconds() < 9 ? '0' + this.registro.getSeconds() : this.registro.getSeconds();
+    hora = this.registro.getHours() < 10 ? '0' + this.registro.getHours() : this.registro.getHours();
+    minutos = this.registro.getMinutes() < 10 ? '0' + this.registro.getMinutes() : this.registro.getMinutes() ;
+    segundos =this.registro.getSeconds() < 10 ? '0' + this.registro.getSeconds() : this.registro.getSeconds();
 	timePost = `${this.hora}:${this.minutos}:${this.segundos}`;
 
 
